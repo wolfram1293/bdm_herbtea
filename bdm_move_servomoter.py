@@ -28,6 +28,7 @@ def servo_angle(angle):
 #サーボモータの角度をデューティ比で制御
 #Servo.ChangeDutyCycle(デューティ比[0-100%]
 
+'''
 while True:
     try:
         servo_angle(-90)               #サーボモータ -90°
@@ -41,3 +42,4 @@ while True:
         Servo.stop()                   #サーボモータをストップ
         GPIO.cleanup()                 #GPIOをクリーンアップ
         sys.exit()                     #プログラムを終了
+'''
