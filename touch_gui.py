@@ -37,8 +37,8 @@ def screen_opening():
     screen_clear()
 
 def screen_home():
-    global hmi_state
-    hmi_state = HOME_STATE
+    #global hmi_state
+    #hmi_state = HOME_STATE
 
     screen.fill((0,0,0))
 
