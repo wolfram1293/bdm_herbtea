@@ -83,13 +83,15 @@ if __name__ == '__main__':
                 button = on_touch() 
                 if button == 'button1':
                     print('button1')
-                    move_servo.servo_angle(45)
+                    move_servo.servo_angle(0)
                     # event of button1
                 if button == 'button2':
                     print('button2')
+                    move_servo.servo_angle(45)
                     # event of button2
                 if button == 'button3':
                     print('button3')
+                    move_servo.servo_angle(90)
                     # event of button3
 
             #ensure there is always a safe way to end the program if the touch screen fails
