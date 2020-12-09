@@ -6,6 +6,7 @@ from pygame.locals import *
 import time
 import os
 import sys
+import bdm_move_servomoter as move_servo
 
 # GUI Setting from here------
 pygame.init()
@@ -82,6 +83,7 @@ if __name__ == '__main__':
                 button = on_touch() 
                 if button == 'button1':
                     print('button1')
+                    move_servo.servo_angle(45)
                     # event of button1
                 if button == 'button2':
                     print('button2')
