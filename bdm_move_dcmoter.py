@@ -15,7 +15,7 @@ MOTOR_PWM0 = 21 # DC Motor PWM0
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(MOTOR_PWM0, GPIO.OUT)
-pwm0 = GPIO.PWM(MOTOR_PWM, 50)  # 周波数50Hz
+pwm0 = GPIO.PWM(MOTOR_PWM0, 50)  # 周波数50Hz
 pwm0.start(0)
 
 spi = spidev.SpiDev()
