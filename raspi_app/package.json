@@ -1,0 +1,11 @@
+{
+  "name": "raspi_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bdm_move_dcmoter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Keigo Yonezawa",
+  "license": "ISC"
+}
