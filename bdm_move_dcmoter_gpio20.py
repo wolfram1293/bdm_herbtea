@@ -22,7 +22,7 @@ pwm0.start(0)
 try:
     print('--- start program ---')
     while True:
-        val = 5000
+        val = 6000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm0.ChangeDutyCycle(duty)
