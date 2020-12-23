@@ -1,0 +1,12 @@
+{
+  "name": "python_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "py_main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
