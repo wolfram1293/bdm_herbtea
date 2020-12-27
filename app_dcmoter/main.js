@@ -22,5 +22,3 @@ exapp.get("/index", (req, res)=>{
     console.log('finished');
   });
 });
-
-exapp.listen(3000);
