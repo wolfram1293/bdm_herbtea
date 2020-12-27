@@ -10,7 +10,7 @@ elapp.on("ready", function () {
   var main = new electron.BrowserWindow({width: 800, height: 600});
   main.on("closed", electron.app.quit);
   main.webContents.openDevTools();
-  main.loadFile('public/index.html')
+  main.loadURL("http://127.0.0.1:3000/");
 });
 
 exapp.get("/index", (req, res)=>{
@@ -22,3 +22,5 @@ exapp.get("/index", (req, res)=>{
     console.log('finished');
   });
 });
+
+exapp.listen(3000);
