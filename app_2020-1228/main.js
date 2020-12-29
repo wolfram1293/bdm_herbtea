@@ -11,8 +11,7 @@ function createWindow () {
     width: 400,
     height: 400,
     x: 0,
-    y: 0,
-    autoHideMenuBar: true
+    y: 0
   })
 
   // and load the index.html of the app.

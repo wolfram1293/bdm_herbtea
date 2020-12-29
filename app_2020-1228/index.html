@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello Python!</title>
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
     <div id="app" class="container">
       <button type="button" @click="hello()">Hello World!</button>
       <button type="button" @click="move_dcmoter_gpio20()">Move DC moter!</button>
-      <p>{{message}}</p>
+      <p> {{ message }} </p>
     </div>
     <script>
       require('./renderer.js')
