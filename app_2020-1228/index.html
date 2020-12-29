@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello Python!</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div id="app" class="container">
+      <button type="button" @click="hello()">Hello World!</button>
+      <p>{{message}}</p>
+
+    </div>
+    <script>
+      require('./renderer.js')
+    </script>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script>
+
+      new Vue({
+        el: '#app',
+        data: {
+          message: "Hi!"
+        },
+        methods: {
+          /*
+          hello(){
+            const spawn = require('child_process').spawn;
+            const target = 'python/hello.py'
+            //const command = 'python3 "'+ target
+            const process = spawn('python3 ', ['./python/hello.py'])
+            this.message = process;
+            process.stdout.on('data', (data) => {
+              this.message = "Changed!2";
+              if(data != '') {
+              }
+            });
+          }
+          */
+          /*
+          hello(){
+            var {PythonShell} = require('python-shell');
+            var options = {
+              pythonPath: "/usr/bin/python", // Python3のパスを指定しないと動かないので注意
+              pythonOption: ["-u"],
+              scriptPath: './'
+            };
+            var pyshell = new PythonShell('./python/hello.py');
+            this.message = pyshell;
+            pyshell.on('message',function(data){
+              //console.log("予測結果:"+JSON.parse(message));
+              this.message = "Changed!2";
+            });
+          }
+          */
+          
+          hello(){
+            const {PythonShell} = require('python-shell')
+            this.message = PythonShell;
+            PythonShell.runString('print "Hello Python"', null, function (err, result) {
+              if (err) throw err;
+              this.message = result;
+            });
+          }
+        
+        },
+        computed: {
+
+        }
+      })
+
+    </script>
+  </body>
+</html>
