@@ -69,11 +69,13 @@
           */
 
           hello(){
-            const target = __dirname +'/python/hello.py'     
-            const command = '/usr/bin/python "'+ target +'"';   // 環境によって'/usr/bin/python "'が変わるので注意    
-            const process = spawn('/bin/sh', ['-c', command])　　// 環境によって'/bin/sh'が変わるので注意    
+            const target = __dirname +'/python/hello.py' 
+            const command = '/usr/bin/python "'+ target +'"';   // 環境によって'/usr/bin/python "'が変わるので注意   
+            const process = spawn('/bin/sh', ['-c', command])　　// 環境によって'/bin/sh'が変わるので注意
+            this.message = '3';    
             process.stdout.on('data', (data) => {
-                if(data != '') {    
+              if(data != '') {
+                    this.message = '5';     
                     this.message = (new TextDecoder).decode(data);
                 }
             });
