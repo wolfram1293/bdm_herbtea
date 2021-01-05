@@ -43,6 +43,10 @@ GPIO.setup(12, GPIO.OUT)
 GPIO.setup(16, GPIO.OUT)
 GPIO.setup(20, GPIO.OUT)
 GPIO.setup(21, GPIO.OUT)
+pwm12 = GPIO.PWM(12, 50)  # 周波数50Hz
+pwm16 = GPIO.PWM(16, 50)  # 周波数50Hz
+pwm20 = GPIO.PWM(20, 50)  # 周波数50Hz
+pwm21 = GPIO.PWM(21, 50)  # 周波数50Hz
 
 
 class MainRoot(FloatLayout):
@@ -110,40 +114,36 @@ class MainRoot(FloatLayout):
         print("hello, kivy!")
 
     def move_dcmoter_gpio12(self):
-        pwm = GPIO.PWM(12, 50)  # 周波数50Hz
-        pwm.start(0)
+        pwm12.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
+        pwm12.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm12), 10)
     
     def move_dcmoter_gpio16(self):
-        pwm = GPIO.PWM(16, 50)  # 周波数50Hz
-        pwm.start(0)
+        pwm16.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10) 
+        pwm16.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm16), 10) 
     
     def move_dcmoter_gpio20(self):
-        pwm = GPIO.PWM(20, 50)  # 周波数50Hz
-        pwm.start(0)
+        pwm20.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
+        pwm20.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm20), 10)
     
     def move_dcmoter_gpio21(self):
-        pwm = GPIO.PWM(21, 50)  # 周波数50Hz
-        pwm.start(0)
+        pwm21.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
+        pwm21.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm21), 10)
     
     def stop_dcmoter(self, pwm):
         pwm.stop()
