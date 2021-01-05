@@ -1,0 +1,83 @@
+<Window1@FloatLayout>
+
+    ActionBar:
+        ActionView:
+
+            ActionPrevious:
+                title: 'ウィンドウ1'
+                with_previous: False
+
+    FloatLayout:
+        canvas:
+            Rectangle:
+                source: "./image/tea_background5.jpg"
+                pos: self.pos
+                size: self.size
+
+        Label:
+            font_size: 80
+            markup: True
+            text: "[color=000000][i]ブレンドの種類を選んでください[/i][/color]"
+            pos: 0, 1000
+            size_hint: 1, 0.1
+
+        Button:
+            text: ""
+            pos: 300, 600
+            size_hint: 0.25, 0.25
+            on_press: app.root.popup_disp1();
+            canvas:
+                Rectangle:
+                    source: "./image/lavender.jpg"
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+        Button:
+            text: ""
+            pos: 300, 150
+            size_hint: 0.25, 0.25
+            on_press: app.root.popup_disp2();
+            canvas:
+                Rectangle:
+                    source: "./image/lavender.jpg"
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+        Button:
+            text: ""
+            pos: 900, 150
+            size_hint: 0.25, 0.25
+            on_press: app.root.popup_disp3();
+            canvas:
+                Rectangle:
+                    source: "./image/lavender.jpg"
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height
+        Button:
+            text: ""
+            pos: 900, 600
+            size_hint: 0.25, 0.25
+            on_press: app.root.popup_disp4();
+            canvas:
+                Rectangle:
+                    source: "./image/lavender.jpg"
+                    pos: self.pos
+                    size: self.size
+                Color:
+                    rgba: .5, .5, .5, 1
+                Line:
+                    width: 2
+                    rectangle: self.x, self.y, self.width, self.height

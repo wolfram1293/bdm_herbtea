@@ -1,0 +1,35 @@
+<TopWindow@FloatLayout>
+
+    ActionBar:
+        ActionView:
+
+            ActionPrevious:
+                title: "トップページ"
+                with_previous: False
+
+    FloatLayout:
+        canvas:
+            Rectangle:
+                source: "./image/tea_background5.jpg"
+                pos: self.pos
+                size: self.size
+
+        Button:
+            font_size: 120
+            text: "ブレンド\nから選ぶ"
+            pos: 100, 300
+            size_hint: 0.4, 0.4
+            background_normal: './image/button_norm.png'
+            background_down: './image/button_norm.png'
+            border: 30,30,30,30
+            on_press: app.root.change_disp1();
+        
+        Button:
+            font_size: 120
+            text: " 自分で\nブレンド\n   する"
+            pos: 800, 300
+            size_hint: 0.4, 0.4
+            background_normal: './image/button_norm.png'
+            background_down: './image/button_norm.png'
+            border: 30,30,30,30
+            on_press: app.root.change_disp1();
