@@ -115,7 +115,7 @@ class MainRoot(FloatLayout):
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm0.ChangeDutyCycle(duty)
+        pwm.ChangeDutyCycle(duty)
         Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
     
     def move_dcmoter_gpio16(self):
@@ -124,7 +124,7 @@ class MainRoot(FloatLayout):
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm0.ChangeDutyCycle(duty)
+        pwm.ChangeDutyCycle(duty)
         Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10) 
     
     def move_dcmoter_gpio20(self):
@@ -133,7 +133,7 @@ class MainRoot(FloatLayout):
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm0.ChangeDutyCycle(duty)
+        pwm.ChangeDutyCycle(duty)
         Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
     
     def move_dcmoter_gpio21(self):
@@ -142,7 +142,7 @@ class MainRoot(FloatLayout):
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
-        pwm0.ChangeDutyCycle(duty)
+        pwm.ChangeDutyCycle(duty)
         Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
     
     def stop_dcmoter(self, pwm):
