@@ -32,8 +32,10 @@ Builder.load_file('window3.kv')
 Builder.load_file('popup1.kv')
 
 
+# raspi
 import spidev
 import RPi.GPIO as GPIO
+from time import sleep
 
 MOTOR_PWM0 = 20 # DC Motor PWM0
 GPIO.setmode(GPIO.BCM)
