@@ -115,7 +115,7 @@ class MainRoot(FloatLayout):
 
     def move_dcmoter_gpio12(self):
         pwm12.start(0)
-        val = 6000
+        val = 7000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm12.ChangeDutyCycle(duty)
