@@ -13,6 +13,8 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.widget import Widget
+from kivy.core.window import Window
+Window.size = (800, 600)
 
 # 日本語フォント表示対応
 from kivy.core.text import LabelBase, DEFAULT_FONT
