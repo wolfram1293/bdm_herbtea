@@ -18,9 +18,8 @@ from kivy.uix.widget import Widget
 from kivy.core.text import LabelBase, DEFAULT_FONT
 from kivy.resources import resource_add_path
 
-#フォントへのパスとフォント設定・環境によって要変更！！！！
-resource_add_path("/usr/share/fonts/truetype")         
-LabelBase.register(DEFAULT_FONT, "fonts-japanese-gothic.ttf")
+resource_add_path("./fonts")         
+LabelBase.register(DEFAULT_FONT, "ゴシック.ttc")
 
 # kvファイルを画面ごとに分離してバラで読み込む
 from kivy.lang import Builder
