@@ -109,12 +109,15 @@ class MainRoot(FloatLayout):
         print("hello, kivy!")
 
     def move_dcmoter(self):
-        for i in range(100):
-            val = 6000
-            print('val= ',val)
-            duty = (val - 2048) * 50 / 2048
-            pwm0.ChangeDutyCycle(duty)
-            sleep(0.5)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm0.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(), 10)
+    
+    def stop_dcmoter(self):
+        pwm0.stop()
+        GPIO.cleanup()
 
 class MainApp(App): 
     def __init__(self, **kwargs):
