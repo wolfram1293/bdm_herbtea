@@ -40,8 +40,10 @@ from time import sleep
 
 MOTOR_PWM0 = 20 # DC Motor PWM0
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(MOTOR_PWM0, GPIO.OUT)
-pwm0 = GPIO.PWM(MOTOR_PWM0, 50)  # 周波数50Hz
+GPIO.setup(12, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
+GPIO.setup(20, GPIO.OUT)
+GPIO.setup(21, GPIO.OUT)
 
 
 class MainRoot(FloatLayout):
@@ -108,16 +110,19 @@ class MainRoot(FloatLayout):
     def hello(self):
         print("hello, kivy!")
 
-    def move_dcmoter(self):
+    def move_dcmoter(self, gpio_num):
+        pwm0 = GPIO.PWM(gpio_num, 50)  # 周波数50Hz
         pwm0.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm0.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(), 10)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm0), 10)
     
-    def stop_dcmoter(self):
+    def stop_dcmoter(self, pwm0):
         pwm0.stop()
+
+
 
 class MainApp(App): 
     def __init__(self, **kwargs):
