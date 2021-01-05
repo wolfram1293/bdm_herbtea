@@ -38,7 +38,6 @@ import spidev
 import RPi.GPIO as GPIO
 from time import sleep
 
-MOTOR_PWM0 = 20 # DC Motor PWM0
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(12, GPIO.OUT)
 GPIO.setup(16, GPIO.OUT)
@@ -110,17 +109,44 @@ class MainRoot(FloatLayout):
     def hello(self):
         print("hello, kivy!")
 
-    def move_dcmoter(self, gpio_num):
-        pwm0 = GPIO.PWM(gpio_num, 50)  # 周波数50Hz
-        pwm0.start(0)
+    def move_dcmoter_gpio12(self):
+        pwm = GPIO.PWM(12, 50)  # 周波数50Hz
+        pwm.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm0.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm0), 10)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
     
-    def stop_dcmoter(self, pwm0):
-        pwm0.stop()
+    def move_dcmoter_gpio16(self):
+        pwm = GPIO.PWM(16, 50)  # 周波数50Hz
+        pwm.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm0.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10) 
+    
+    def move_dcmoter_gpio20(self):
+        pwm = GPIO.PWM(20, 50)  # 周波数50Hz
+        pwm.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm0.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
+    
+    def move_dcmoter_gpio21(self):
+        pwm = GPIO.PWM(21, 50)  # 周波数50Hz
+        pwm.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm0.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm), 10)
+    
+    def stop_dcmoter(self, pwm):
+        pwm.stop()
 
 
 
