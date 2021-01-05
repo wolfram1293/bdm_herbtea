@@ -32,7 +32,7 @@ Builder.load_file('window3.kv')
 Builder.load_file('popup1.kv')
 
 from kivy.core.window import Window
-Window.size = (800,400)
+Window.size = (800,600)
 
 # raspi
 import spidev
