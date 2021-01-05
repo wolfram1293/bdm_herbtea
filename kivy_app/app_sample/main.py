@@ -13,8 +13,6 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.popup import Popup
 from kivy.uix.widget import Widget
-from kivy.core.window import Window
-Window.size = (800, 600)
 
 # 日本語フォント表示対応
 from kivy.core.text import LabelBase, DEFAULT_FONT
@@ -33,6 +31,8 @@ Builder.load_file('window2.kv')
 Builder.load_file('window3.kv')
 Builder.load_file('popup1.kv')
 
+from kivy.core.window import Window
+Window.fullscreen = "auto"
 
 # raspi
 import spidev
