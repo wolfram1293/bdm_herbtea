@@ -37,6 +37,12 @@ import spidev
 import RPi.GPIO as GPIO
 from time import sleep
 
+MOTOR_PWM0 = 20 # DC Motor PWM0
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(MOTOR_PWM0, GPIO.OUT)
+pwm0 = GPIO.PWM(MOTOR_PWM0, 50)  # 周波数50Hz
+pwm0.start(0)
+
 
 class MainRoot(FloatLayout):
     top_window = None
@@ -103,10 +109,6 @@ class MainRoot(FloatLayout):
         print("hello, kivy!")
 
     def move_dcmoter(self):
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(MOTOR_PWM0, GPIO.OUT)
-        pwm0 = GPIO.PWM(MOTOR_PWM0, 50)  # 周波数50Hz
-        pwm0.start(0)
         val = 5000
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
@@ -115,7 +117,6 @@ class MainRoot(FloatLayout):
     
     def stop_dcmoter(self):
         pwm0.stop()
-        GPIO.cleanup()
 
 class MainApp(App): 
     def __init__(self, **kwargs):
