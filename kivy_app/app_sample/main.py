@@ -94,7 +94,7 @@ class MainRoot(FloatLayout):
     def change_disp3(self):
         self.clear_widgets()
         self.add_widget(self.window3)
-        Clock.schedule_once(lambda dt: self.change_disp1(), 2)
+        Clock.schedule_once(lambda dt: self.show_top(), 2)
 
     def change_disp_self_blend(self):
         self.clear_widgets()
@@ -265,6 +265,10 @@ class MainApp(App):
     
     def stop_dcmoter(self, pwm):
         pwm.stop()
+        self.lavandula_num = 0
+        self.rose_num = 0
+        self.chamomile_num = 0
+        self.blue_num = 0
         
 
     pass
