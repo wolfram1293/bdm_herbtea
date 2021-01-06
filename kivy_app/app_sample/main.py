@@ -198,6 +198,33 @@ class MainApp(App):
             self.lavandula_num -= 1
         self.lavandula_text = str(self.lavandula_num)
     
+    def rose_add(self):
+        self.rose_num += 1
+        self.rose_text = str(self.rose_num)
+    
+    def rose_delt(self):
+        if self.rose_num > 0:
+            self.rose_num -= 1
+        self.rose_text = str(self.rose_num)
+
+    def chamomile_add(self):
+        self.chamomile_num += 1
+        self.chamomile_text = str(self.chamomile_num)
+    
+    def chamomile_delt(self):
+        if self.chamomile_num > 0:
+            self.chamomile_num -= 1
+        self.chamomile_text = str(self.chamomile_num)
+    
+    def blue_add(self):
+        self.blue_num += 1
+        self.blue_text = str(self.blue_num)
+    
+    def blue_delt(self):
+        if self.blue_num > 0:
+            self.blue_num -= 1
+        self.blue_text = str(self.blue_num)
+    
     def start_self_blend(self):
         Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
 
