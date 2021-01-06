@@ -8,6 +8,7 @@ from kivy.core.window import Window
 from kivy.factory import Factory
 from kivy.clock import Clock
 from kivy.properties import ObjectProperty
+from kivy.properties import StringProperty  # 追加
 
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
@@ -25,6 +26,7 @@ LabelBase.register(DEFAULT_FONT, "ゴシック.ttc")
 from kivy.lang import Builder
 
 Builder.load_file('top_window.kv')
+Builder.load_file('window_self_blend.kv')
 Builder.load_file('window1.kv')
 Builder.load_file('window2.kv')
 Builder.load_file('window3.kv')
@@ -54,10 +56,12 @@ class MainRoot(FloatLayout):
     window1 = None
     window2 = None
     window3 = None
+    window_self_blend = None
     popup1 = None
     popup2 = None
     popup3 = None
     popup4 = None
+    
  
     def __init__(self, **kwargs):
         # 起動時に各画面を作成して使い回す
@@ -65,11 +69,17 @@ class MainRoot(FloatLayout):
         self.window1 = Factory.Window1()
         self.window2 = Factory.Window2()
         self.window3 = Factory.Window3()
+        self.window_self_blend = Factory.WindowSelfBlend()
         self.popup1 = Factory.Popup1()
         self.popup2 = Factory.Popup2()
         self.popup3 = Factory.Popup3()
         self.popup4 = Factory.Popup4()
+        self.text = "0"
         super(MainRoot, self).__init__(**kwargs)
+
+    def show_top(self):
+        self.clear_widgets()
+        self.add_widget(self.top_window)
 
     def change_disp1(self):
         self.clear_widgets()
@@ -85,6 +95,10 @@ class MainRoot(FloatLayout):
         self.clear_widgets()
         self.add_widget(self.window3)
         Clock.schedule_once(lambda dt: self.change_disp1(), 2)
+
+    def change_disp_self_blend(self):
+        self.clear_widgets()
+        self.add_widget(self.window_self_blend)
 
     def popup_disp1(self):
         self.popup1.open()
@@ -151,9 +165,80 @@ class MainRoot(FloatLayout):
 
 
 class MainApp(App): 
+    # 各茶葉の量
+    lavandula_num = 0
+    rose_num = 0
+    chamomile_num = 0
+    blue_num = 0
+    # テキスト
+    lavandula_text = StringProperty()
+    rose_text = StringProperty()
+    chamomile_text = StringProperty()
+    blue_text = StringProperty()
+
     def __init__(self, **kwargs):
         super(MainApp, self).__init__(**kwargs)
         self.title = 'トップページ'
+        #　グローバル変数
+        self.lavandula_text = "0"
+        self.rose_text = "0"
+        self.chamomile_text = "0"
+        self.blue_text = "0"
+        self.lavandula_num = 0
+        self.rose_num = 0
+        self.chamomile_num = 0
+        self.blue_num = 0
+    
+    def lavandula_add(self):
+        self.lavandula_num += 1
+        self.lavandula_text = str(self.lavandula_num)
+    
+    def lavandula_delt(self):
+        if self.lavandula_num > 0:
+            self.lavandula_num -= 1
+        self.lavandula_text = str(self.lavandula_num)
+    
+    def start_self_blend(self):
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
+
+    def move_dcmoter_gpio12(self):
+        pwm12.start(0)
+        val = 6000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm12.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio16(), self.lavandula_num)
+    
+    def move_dcmoter_gpio16(self):
+        pwm12.stop()
+        pwm16.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm16.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio20(), self.chamomile_num) 
+    
+    def move_dcmoter_gpio20(self):
+        pwm16.stop()
+        pwm20.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm20.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio21(), self.rose_num*3)
+    
+    def move_dcmoter_gpio21(self):
+        pwm20.stop()
+        pwm21.start(0)
+        val = 5000
+        print('val= ',val)
+        duty = (val - 2048) * 50 / 2048
+        pwm21.ChangeDutyCycle(duty)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm21), self.blue_num*3)
+    
+    def stop_dcmoter(self, pwm):
+        pwm.stop()
+        
 
     pass
 
