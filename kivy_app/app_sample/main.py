@@ -94,7 +94,7 @@ class MainRoot(FloatLayout):
     def change_disp3(self):
         self.clear_widgets()
         self.add_widget(self.window3)
-        Clock.schedule_once(lambda dt: self.change_disp1(), 2)
+        Clock.schedule_once(lambda dt: self.show_top(), 2)
 
     def change_disp_self_blend(self):
         self.clear_widgets()
@@ -198,6 +198,33 @@ class MainApp(App):
             self.lavandula_num -= 1
         self.lavandula_text = str(self.lavandula_num)
     
+    def rose_add(self):
+        self.rose_num += 1
+        self.rose_text = str(self.rose_num)
+    
+    def rose_delt(self):
+        if self.rose_num > 0:
+            self.rose_num -= 1
+        self.rose_text = str(self.rose_num)
+
+    def chamomile_add(self):
+        self.chamomile_num += 1
+        self.chamomile_text = str(self.chamomile_num)
+    
+    def chamomile_delt(self):
+        if self.chamomile_num > 0:
+            self.chamomile_num -= 1
+        self.chamomile_text = str(self.chamomile_num)
+    
+    def blue_add(self):
+        self.blue_num += 1
+        self.blue_text = str(self.blue_num)
+    
+    def blue_delt(self):
+        if self.blue_num > 0:
+            self.blue_num -= 1
+        self.blue_text = str(self.blue_num)
+    
     def start_self_blend(self):
         Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
 
@@ -238,7 +265,14 @@ class MainApp(App):
     
     def stop_dcmoter(self, pwm):
         pwm.stop()
-        
+        self.lavandula_num = 0
+        self.rose_num = 0
+        self.chamomile_num = 0
+        self.blue_num = 0
+        self.lavandula_text = "0"
+        self.rose_text = "0"
+        self.chamomile_text = "0"
+        self.blue_text = "0"
 
     pass
 
