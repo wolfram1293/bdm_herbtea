@@ -129,10 +129,10 @@ class MainApp(App):
         super(MainApp, self).__init__(**kwargs)
         self.title = 'トップページ'
         #　グローバル変数
-        self.lavandula_text = "0"
-        self.rose_text = "0"
-        self.chamomile_text = "0"
-        self.blue_text = "0"
+        self.lavandula_text = "0 g"
+        self.rose_text = "0 g"
+        self.chamomile_text = "0 g" 
+        self.blue_text = "0 g"
         self.lavandula_num = 0
         self.rose_num = 0
         self.chamomile_num = 0
@@ -140,39 +140,39 @@ class MainApp(App):
     
     def lavandula_add(self):
         self.lavandula_num += 1
-        self.lavandula_text = str(self.lavandula_num)
+        self.lavandula_text = str(self.lavandula_num)+" g"
     
     def lavandula_delt(self):
         if self.lavandula_num > 0:
             self.lavandula_num -= 1
-        self.lavandula_text = str(self.lavandula_num)
+        self.lavandula_text = str(self.lavandula_num)+" g"
 
     def rose_add(self):
         self.rose_num += 1
-        self.rose_text = str(self.rose_num)
+        self.rose_text = str(self.rose_num)+" g"
     
     def rose_delt(self):
         if self.rose_num > 0:
             self.rose_num -= 1
-        self.rose_text = str(self.rose_num)
+        self.rose_text = str(self.rose_num)+" g"
 
     def chamomile_add(self):
         self.chamomile_num += 1
-        self.chamomile_text = str(self.chamomile_num)
+        self.chamomile_text = str(self.chamomile_num)+" g"
     
     def chamomile_delt(self):
         if self.chamomile_num > 0:
             self.chamomile_num -= 1
-        self.chamomile_text = str(self.chamomile_num)
+        self.chamomile_text = str(self.chamomile_num)+" g"
     
     def blue_add(self):
         self.blue_num += 1
-        self.blue_text = str(self.blue_num)
+        self.blue_text = str(self.blue_num)+" g"
     
     def blue_delt(self):
         if self.blue_num > 0:
             self.blue_num -= 1
-        self.blue_text = str(self.blue_num)
+        self.blue_text = str(self.blue_num)+" g"
 
     
 

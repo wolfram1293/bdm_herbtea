@@ -47,7 +47,7 @@
             size_hint: 0.25, 0.25
             canvas:
                 Rectangle:
-                    source: "./image/lavender.jpg"
+                    source: "./image/lavender2.jpg"
                     pos: self.pos
                     size: self.size
                 Color:
@@ -59,8 +59,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.35, 'center_y': 0.08}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.42, 'center_y': 0.25}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.lavandula_add();
             canvas:
                 Rectangle:
@@ -71,8 +71,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.15, 'center_y': 0.08}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.08, 'center_y': 0.25}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.lavandula_delt();
             canvas:
                 Rectangle:
@@ -81,11 +81,20 @@
                     size: self.size
 
         Button:
-            background_color: 1, 1, 1, 1
-            text: app.lavandula_text
+            background_normal: ""
             font_size: 30
+            color: 0,0,0,1
+            text: app.lavandula_text
             pos_hint: {"center_x": 0.25, "center_y": 0.08}
-            size_hint: 0.05, 0.08
+            size_hint: 0.08, 0.08
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
+
+            
 
 
 
@@ -96,7 +105,7 @@
             size_hint: 0.25, 0.25
             canvas:
                 Rectangle:
-                    source: "./image/lavender.jpg"
+                    source: "./image/camomile.jpg"
                     pos: self.pos
                     size: self.size
                 Color:
@@ -107,8 +116,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.85, 'center_y': 0.08}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.92, 'center_y': 0.25}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.chamomile_add();
             canvas:
                 Rectangle:
@@ -118,8 +127,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.65, 'center_y': 0.08}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.58, 'center_y': 0.25}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.chamomile_delt();
             canvas:
                 Rectangle:
@@ -127,11 +136,18 @@
                     pos: self.pos
                     size: self.size
         Button:
-            background_color: 1, 1, 1, 1
+            background_normal: ""
+            color: 0,0,0,1
             text: app.chamomile_text
             font_size: 30
             pos_hint: {"center_x": 0.75, "center_y": 0.08}
-            size_hint: 0.05, 0.08
+            size_hint: 0.08, 0.08
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
 
 
 
@@ -142,7 +158,7 @@
             size_hint: 0.25, 0.25
             canvas:
                 Rectangle:
-                    source: "./image/lavender.jpg"
+                    source: "./image/rose.jpg"
                     pos: self.pos
                     size: self.size
                 Color:
@@ -153,8 +169,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.35, 'center_y': 0.48}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.42, 'center_y': 0.65}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.rose_add();
             canvas:
                 Rectangle:
@@ -164,8 +180,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.15, 'center_y': 0.48}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.08, 'center_y': 0.65}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.rose_delt();
             canvas:
                 Rectangle:
@@ -173,11 +189,18 @@
                     pos: self.pos
                     size: self.size
         Button:
-            background_color: 1, 1, 1, 1
+            background_normal: ""
+            color: 0,0,0,1
             text: app.rose_text
             font_size: 30
             pos_hint: {"center_x": 0.25, "center_y": 0.48}
-            size_hint: 0.05*1.5, 0.08*1.5
+            size_hint: 0.08, 0.08
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
 
 
 
@@ -188,7 +211,7 @@
             size_hint: 0.25, 0.25
             canvas:
                 Rectangle:
-                    source: "./image/lavender.jpg"
+                    source: "./image/mallow_blue.jpg"
                     pos: self.pos
                     size: self.size
                 Color:
@@ -199,8 +222,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.85, 'center_y': 0.48}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.92, 'center_y': 0.65}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.blue_add();
             canvas:
                 Rectangle:
@@ -210,8 +233,8 @@
         Button:
             background_color: 1, 1, 1, 0
             text: ""
-            pos_hint: {'center_x': 0.65, 'center_y': 0.48}
-            size_hint: 0.05*1.5, 0.08*1.5
+            pos_hint: {'center_x': 0.58, 'center_y': 0.65}
+            size_hint: 0.05*1.7, 0.08*1.7
             on_press: app.blue_delt();
             canvas:
                 Rectangle:
@@ -219,8 +242,15 @@
                     pos: self.pos
                     size: self.size
         Button:
-            background_color: 1, 1, 1, 1
+            background_normal: ""
+            color: 0,0,0,1
             text: app.blue_text
             font_size: 30
             pos_hint: {"center_x": 0.75, "center_y": 0.48}
-            size_hint: 0.05, 0.08
+            size_hint: 0.08, 0.08
+            canvas:
+                Color:
+                    rgba: 0, 0, 0, 1
+                Line:
+                    width: 1
+                    rectangle: self.x, self.y, self.width, self.height
