@@ -40,6 +40,7 @@
             on_press: app.root.show_top(); 
 
 
+        # ラベンダ
         Button:
             text: ""
             pos_hint: {'center_x': 0.25, 'center_y': 0.25}
@@ -88,7 +89,7 @@
 
 
 
-
+        # カモミール
         Button:
             text: ""
             pos_hint: {'center_x': 0.75, 'center_y': 0.25}
@@ -108,7 +109,7 @@
             text: ""
             pos_hint: {'center_x': 0.85, 'center_y': 0.08}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_add();
+            on_press: app.chamomile_add();
             canvas:
                 Rectangle:
                     source: "./image/plus.png"
@@ -119,7 +120,7 @@
             text: ""
             pos_hint: {'center_x': 0.65, 'center_y': 0.08}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_delt();
+            on_press: app.chamomile_delt();
             canvas:
                 Rectangle:
                     source: "./image/minus.png"
@@ -127,14 +128,14 @@
                     size: self.size
         Button:
             background_color: 1, 1, 1, 1
-            text: app.lavandula_text
+            text: app.chamomile_text
             font_size: 30
             pos_hint: {"center_x": 0.75, "center_y": 0.08}
             size_hint: 0.05, 0.08
 
 
 
-
+        # ローズ
         Button:
             text: ""
             pos_hint: {'center_x': 0.25, 'center_y': 0.65}
@@ -154,7 +155,7 @@
             text: ""
             pos_hint: {'center_x': 0.35, 'center_y': 0.48}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_add();
+            on_press: app.rose_add();
             canvas:
                 Rectangle:
                     source: "./image/plus.png"
@@ -165,7 +166,7 @@
             text: ""
             pos_hint: {'center_x': 0.15, 'center_y': 0.48}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_delt();
+            on_press: app.rose_delt();
             canvas:
                 Rectangle:
                     source: "./image/minus.png"
@@ -173,14 +174,14 @@
                     size: self.size
         Button:
             background_color: 1, 1, 1, 1
-            text: app.lavandula_text
+            text: app.rose_text
             font_size: 30
             pos_hint: {"center_x": 0.25, "center_y": 0.48}
             size_hint: 0.05, 0.08
 
 
 
-
+        # ブルーなんとか
         Button:
             text: ""
             pos_hint: {'center_x': 0.75, 'center_y': 0.65}
@@ -200,7 +201,7 @@
             text: ""
             pos_hint: {'center_x': 0.85, 'center_y': 0.48}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_add();
+            on_press: app.blue_add();
             canvas:
                 Rectangle:
                     source: "./image/plus.png"
@@ -211,7 +212,7 @@
             text: ""
             pos_hint: {'center_x': 0.65, 'center_y': 0.48}
             size_hint: 0.05, 0.08
-            on_press: app.lavandula_delt();
+            on_press: app.blue_delt();
             canvas:
                 Rectangle:
                     source: "./image/minus.png"
@@ -219,7 +220,7 @@
                     size: self.size
         Button:
             background_color: 1, 1, 1, 1
-            text: app.lavandula_text
+            text: app.blue_text
             font_size: 30
             pos_hint: {"center_x": 0.75, "center_y": 0.48}
             size_hint: 0.05, 0.08
