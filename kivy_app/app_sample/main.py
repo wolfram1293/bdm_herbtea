@@ -269,7 +269,10 @@ class MainApp(App):
         self.rose_num = 0
         self.chamomile_num = 0
         self.blue_num = 0
-        
+        self.lavandula_text = "0"
+        self.rose_text = "0"
+        self.chamomile_text = "0"
+        self.blue_text = "0"
 
     pass
 
