@@ -233,28 +233,28 @@ class MainApp(App):
         self.rose_num = 0
         self.chamomile_num = 5
         self.blue_num = 0
-        Clock.schedule_once(lambda dt: self.chamo_and_lava_gpio12(), 0)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
     
     def start_rose_and_blue(self):
         self.lavandula_num = 0
         self.rose_num = 5
         self.chamomile_num = 0
         self.blue_num = 5
-        Clock.schedule_once(lambda dt: self.chamo_and_lava_gpio12(), 0)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
 
     def start_chamo_and_blue(self):
         self.lavandula_num = 0
         self.rose_num = 0
         self.chamomile_num = 5
         self.blue_num = 5
-        Clock.schedule_once(lambda dt: self.chamo_and_lava_gpio12(), 0)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
     
     def start_chamo_and_rose(self):
         self.lavandula_num = 0
         self.rose_num = 5
         self.chamomile_num = 5
         self.blue_num = 0
-        Clock.schedule_once(lambda dt: self.chamo_and_lava_gpio12(), 0)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio12(), 0)
 
     def move_dcmoter_gpio12(self):
         pwm12.start(0)
