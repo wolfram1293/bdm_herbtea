@@ -280,7 +280,7 @@ class MainApp(App):
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm20.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio21(), self.rose_num*3)
+        Clock.schedule_once(lambda dt: self.move_dcmoter_gpio21(), self.blue_num*3)
     
     def move_dcmoter_gpio21(self):
         pwm20.stop()
@@ -289,7 +289,7 @@ class MainApp(App):
         print('val= ',val)
         duty = (val - 2048) * 50 / 2048
         pwm21.ChangeDutyCycle(duty)
-        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm21), self.blue_num*3)
+        Clock.schedule_once(lambda dt: self.stop_dcmoter(pwm21), self.rose_num*3)
     
     def stop_dcmoter(self, pwm):
         pwm.stop()
