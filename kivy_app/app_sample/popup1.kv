@@ -1,0 +1,60 @@
+<Popup1@Popup>
+    title: "カモミールとラベンダー"
+    id:pop
+    size_hint: .8, .8
+
+    BoxLayout:
+        Label:
+            font_size: 30
+            text: "カモミールとラベンダー\nのブレンド。ハーブティー\nの中でもトップクラスにリ\nラックス効果が期待できる\n。華やかな甘い香りととも\nに、ゆったりとしたひとと\nきを。"
+        Button:
+            font_size: 40
+            size_hint: 0.5, 0.95
+            text: "ブレンドを\n\n開始する"
+            on_press: app.root.change_disp2(10); app.root.popup_close1(); app.start_chamo_and_lava();
+
+<Popup2@Popup>
+    title: "ローズとマローブルー"
+    id:pop
+    size_hint: .8, .8
+
+    BoxLayout:
+        Label:
+            font_size: 30
+            text: "ローズとマローブルーのブ\nレンド。鮮やかな紫から黄\n色、そしてレモンを絞る\nことでピンク色に変わる、\n面白いハーブティー。便秘\n気味な方におすすめ。"
+        Button:
+            font_size: 40
+            size_hint: 0.5, 0.95
+            text: "ブレンドを\n\n開始する"
+            on_press: app.root.change_disp2(30); app.root.popup_close2(); app.start_rose_and_blue();
+
+<Popup3@Popup>
+    title: "カモミールとマローブルー"
+    id:pop
+    size_hint: .8, .8
+
+    BoxLayout:
+        Label:
+            font_size: 30
+            text: "カモミールとマローブ\nルーのブレンド。リラッ\nクス効果や整腸作用が\nある。"
+        Button:
+            font_size: 40
+            size_hint: 0.5, 0.95
+            text: "ブレンドを\n\n開始する"
+            on_press: app.root.change_disp2(20); app.root.popup_close3(); app.start_chamo_and_blue();
+
+<Popup4@Popup>
+    title: "ローズ カモミール"
+    id:pop
+    size_hint: .8, .8
+
+    BoxLayout:
+        Label:
+            font_size: 30
+            text: "ローズとカモミールのブレ\nンド。抗酸化作用\nがあり、女性に嬉しい美容\n成分たっぷりのハーブティ\nー。"
+        Button:
+            font_size: 40
+            size_hint: 0.5, 0.95
+            text: "ブレンドを\n\n開始する"
+            on_press: app.root.change_disp2(20); app.root.popup_close4(); app.start_chamo_and_rose();
+        
